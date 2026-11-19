@@ -5,10 +5,13 @@ Step1:
 	Run Jenkins server using java command
 	
 	   java -jar jenkins.war
+
+    ## if you want to run jenkins on different port other than default 8080, use below command
+	   java -jar jenkins.war --httpPort=9090
 	   
 	Ensure successful run and copy initial password from console output
 	
-	goto browser and  hit the url -> localhost:8080
+	goto browser and  hit the url -> localhost:9090
 	
 	provide admin password ,which is already copied from console output and click enter
 	
