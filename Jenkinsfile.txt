@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+    tools{
+        maven 'Maven-3.9.16'
+    }
+    stages{
+        stage('Build Maven'){
+            steps{
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/Ekallavya/sb-jenkins-k8s-cicd-pipeline']]])
+                bat 'mvn clean install'
+            }
+        }
+        stage('Build docker image'){
+            steps{
+                script{
+                    bat 'docker build -t indrajith007/sb-jenkins-k8s-cicd-pipeline .'
+                }
+            }
+        }
+		stage('Push image to Hub'){
+            steps{
+                script{
+                   withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
+                   bat 'docker login -u indrajith007 -p ${dockerhubpwd}'
+
+				}
+                   bat 'docker push indrajith007/sb-jenkins-k8s-cicd-pipeline'
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+Step1:
+	Download Jenkins war file from jenkins official website
+	Copy & Save jenkins.war file to local file system
+	go to jenkins.war file location
+	Run Jenkins server using java command
+	
+	   java -jar jenkins.war
+	   
+	Ensure successful run and copy initial password from console output
+	
+	goto browser and  hit the url -> localhost:8080
+	
+	provide admin password ,which is already copied from console output and click enter
+	
+	select  suggested installed plug-ins for first time installation
+	
+	after successful plug ins installation , Create First Admin User -> set user name and password 
+	
+	going forward  ,use newly created username and pasword to login jenkins
+	go to jenkins dashboard and explore
+	
+Step 2:
+
+	
+	jenkins server side , configure maven install auto or loal path
+	
+	ensure kubernetes cicd pipeline plugin installed
+
+	 
+	
