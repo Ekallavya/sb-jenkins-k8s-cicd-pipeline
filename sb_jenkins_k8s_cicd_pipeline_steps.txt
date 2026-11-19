@@ -21,10 +21,62 @@ Step1:
 	
 Step 2:
 
+	Navigate Jenkins Dashboard 
+		localhost:8080
+		
+	Click on NewItem
 	
-	jenkins server side , configure maven install auto or loal path
+	Enter item name (user choice)
 	
-	ensure kubernetes cicd pipeline plugin installed
+	 ex:sb-jenkins-k8s-cicd-pipeline
+	 
+	select item type -> pipeline  option -> click on Ok
+	
+	provide pipeline description (user choice)
+	
+	select GitHub project  checkbox
+	
+	provide github project url
+	
+		ex: https://github.com/Ekallavya/sb-jenkins-k8s-cicd-pipeline
+	
+	Navigate to Triggers section
+	
+	select poll SCM option
+	
+		provide input to schedule the pipeline trigger
+		  
+		 ex: * * * * * 
+			
+			 (always - every minute ,every second ,if any commits to github ,pipeline would trigger)
+			 
+	Navigate to pipeline section
+	
+	    select Definition -> pipeline script
+		provide script manual commands  (refer jenkinsfile.txt)
+		
+	select Use Groovy Sandbox option
+	
+	click apply and save
+	
+	Navigate to dashboard
+	
+	click on newly created pipeline
+	
+	click on build now
+	
+	verify build status ,pipeline status , pipeline stages and verify  console output if any errors
+	
+	
+	Note : ensure  docker hub login ,github login ,maven installation before pipeline trigger
+	
+	Install Plug ins,if any dependencies required 
+
+		Navigate to setting (settings crown wheel)-> click on
+	navigate to Plugins -> select plugins options -> click on
+	verify installed plugins and availabel plugins as requried
+	
+	
 
 	 
 	
